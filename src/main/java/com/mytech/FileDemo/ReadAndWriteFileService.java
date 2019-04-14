@@ -26,7 +26,7 @@ public class ReadAndWriteFileService {
         List<String> files = new ArrayList<>();
         try {
             File file = ResourceUtils.getFile("classpath:"+jsonData);
-            // If we want to to use external location of project
+            //If we want to read file from external location
             //File file = ResourceUtils.getFile(jsonConfig);
             System.out.println(file);
             for(File jsonFile : file.listFiles()){
@@ -42,7 +42,7 @@ public class ReadAndWriteFileService {
         JSONObject jsonObject = new JSONObject();
         try {
             File file = ResourceUtils.getFile("classpath:"+jsonData+fileName);
-            // If we want to to use external location of project
+            // If we want to read file from external location
             //File file = ResourceUtils.getFile(jsonConfig+fileName);
             FileReader fileReader = new FileReader(file);
             Object obj = jsonParser.parse(fileReader);
